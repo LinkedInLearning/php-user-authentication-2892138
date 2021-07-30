@@ -1,0 +1,206 @@
+/* Site Colors:
+  #e03e52 - pink
+  #c8ced2 - grey
+  #f07b27 - orange
+  #786758 - brown
+*/
+
+html {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  width: 1100px;
+  height: 100%;
+  margin: auto;
+  border: 0;
+  font-family: Verdana, Arial, Helvetica, sans-serif;
+  font-size: 13px;
+  line-height: 15px;
+  background: #c8ced2;
+}
+
+header {
+  height: 140px;
+  width: 1100px;
+  margin: 0;
+  padding: 0;
+  text-align: left;
+  background: #e03e52;
+  color: #FFFFFF;
+}
+
+header h1 {
+  padding: 1em;
+  margin: 0;
+}
+
+#main {
+  width: 1100px;
+  height: 100%;
+  min-height: 800px;
+  margin: 0;
+  padding: 0;
+  background: #c8ced2;
+}
+
+footer {
+  clear: both;
+  height: 3em;
+  margin: 0;
+  padding: 1em;
+  text-align: center;
+  background: #e03e52;
+  color: #FFFFFF;
+}
+
+
+/* Navigation */
+
+navigation {
+  float: left;
+  width: 200px;
+  height: 100%;
+  background: #7a6855;
+}
+
+navigation a {
+  color: #FFFFFF;
+  text-decoration: none;
+}
+
+navigation a:hover {
+  color: #e03e52;
+  text-decoration: underline;
+}
+
+a {
+  color: #E03E52;
+  text-decoration: none
+}
+
+a:hover {
+  text-decoration: underline
+}
+
+ul.subjects {
+  margin-top: 20px;
+  margin-left: 20px;
+  padding: 0;
+  list-style: none;
+}
+
+ul.subjects > li {
+  margin-bottom: 1em;
+}
+
+ul.pages {
+  margin-left: 15px;
+  padding: 0;
+  list-style: none;
+  font-weight: normal;
+}
+
+.selected > a {
+  color: #f07b27;
+  font-style: normal;
+}
+
+navigation li {
+  font-size: 16px;
+  line-height: 1.5em;
+}
+
+
+/* Page Content */
+
+#hero-image {
+  float: left;
+  margin-bottom: 40px;
+  padding: 0;
+  height: 200px;
+  width: 900px;
+}
+
+#page {
+  float: right;
+  width: 900px;
+  height: 100%;
+  padding-left: 0;
+  vertical-align: top;
+  background: #ffffff;
+}
+
+#page h1 {
+  font-size: 16px;
+  color: #000000;
+  line-height: normal;
+}
+
+#page h2 {
+  font-size: 14px;
+  color: #000000;
+  line-height: normal;
+}
+
+#page p {
+  font-family: "Gill Sans", "Gill Sans MT", "Myriad Pro", "DejaVu Sans Condensed", Helvetica, Arial, "sans-serif" font-size: 12px;
+  color: #000000;
+  padding: 0px;
+  line-height: normal;
+}
+
+#page h3 {
+  font-size: 14px;
+  color: #e03e52;
+}
+
+#content {
+  margin-top: 0px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+#content p {
+  font-size: 16px;
+  line-height: normal;
+}
+
+#content li {
+  padding: 5px;
+  font-size: 16px;
+}
+
+#disclaimer {
+  margin-left: 10px;
+  font-size: 14px;
+  line-height: normal;
+  clear: both;
+  padding: 1em;
+}
+
+/* Service blocks on homepage */
+
+#service-blocks {
+  margin-top: 50px;
+}
+
+#service-blocks .service {
+  float: left;
+  width: 250px;
+  margin-right: 40px;
+}
+
+/* Learn More links */
+
+a.learnmore {
+  color: #E03E52;
+  font-size: 14px;
+  font-weight: bold;
+  text-decoration: none
+}
+
+a.learnmore:hover {
+  text-decoration: underline
+}
