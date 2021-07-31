@@ -2,6 +2,8 @@
 
 require_once('../../../private/initialize.php');
 
+require_login();
+
 $admin_set = find_all_admins();
 
 ?>
