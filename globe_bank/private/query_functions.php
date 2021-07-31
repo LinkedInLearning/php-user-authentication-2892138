@@ -41,6 +41,8 @@
 
   function validate_admin($admin, $options=[]) {
 
+    $password_required = $options['password_required'] ?? true;
+
     if(is_blank($admin['first_name'])) {
       $errors[] = "First name cannot be blank.";
     } elseif (!has_length($admin['first_name'], array('min' => 2, 'max' => 255))) {
@@ -69,15 +71,16 @@
       $errors[] = "Username not allowed. Try another.";
     }
 
-    if(is_blank($admin['password'])) {
-      $errors[] = "Password cannot be blank.";
+    if($password_required) {
+      if(is_blank($admin['password'])) {
+        $errors[] = "Password cannot be blank.";
+      }
+      if(is_blank($admin['confirm_password'])) {
+        $errors[] = "Confirm password cannot be blank.";
+      } elseif ($admin['password'] !== $admin['confirm_password']) {
+        $errors[] = "Password and confirm password must match.";
+      }
     }
-    if(is_blank($admin['confirm_password'])) {
-      $errors[] = "Confirm password cannot be blank.";
-    } elseif ($admin['password'] !== $admin['confirm_password']) {
-      $errors[] = "Password and confirm password must match.";
-    }
-
 
     return $errors;
   }
@@ -117,18 +120,21 @@
   function update_admin($admin) {
     global $db;
 
-    $errors = validate_admin($admin);
+    $password_sent = !is_blank($admin['password']);
+
+    $errors = validate_admin($admin, ['password_required' => $password_sent]);
     if (!empty($errors)) {
       return $errors;
     }
-
-    $hashed_password = '';
 
     $sql = "UPDATE admins SET ";
     $sql .= "first_name='" . db_escape($db, $admin['first_name']) . "', ";
     $sql .= "last_name='" . db_escape($db, $admin['last_name']) . "', ";
     $sql .= "email='" . db_escape($db, $admin['email']) . "', ";
-    $sql .= "hashed_password='" . db_escape($db, $hashed_password) . "', ";
+    if($password_sent) {
+      $hashed_password = password_hash($admin['password'], PASSWORD_BCRYPT);
+      $sql .= "hashed_password='" . db_escape($db, $hashed_password) . "', ";
+    }
     $sql .= "username='" . db_escape($db, $admin['username']) . "' ";
     $sql .= "WHERE id='" . db_escape($db, $admin['id']) . "' ";
     $sql .= "LIMIT 1";
