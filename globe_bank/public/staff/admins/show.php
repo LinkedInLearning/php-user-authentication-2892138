@@ -38,7 +38,8 @@ $admin = find_admin_by_id($id);
       </dl>
       <dl>
         <dt>Username</dt>
-        <dd><?php echo h($admin['username']); ?></dd>
+        <dd><?php echo h($admin['username']); ?>
+        </dd>
       </dl>
     </div>
 
