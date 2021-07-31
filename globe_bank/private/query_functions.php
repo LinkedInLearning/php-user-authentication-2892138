@@ -69,6 +69,16 @@
       $errors[] = "Username not allowed. Try another.";
     }
 
+    if(is_blank($admin['password'])) {
+      $errors[] = "Password cannot be blank.";
+    }
+    if(is_blank($admin['confirm_password'])) {
+      $errors[] = "Confirm password cannot be blank.";
+    } elseif ($admin['password'] !== $admin['confirm_password']) {
+      $errors[] = "Password and confirm password must match.";
+    }
+
+
     return $errors;
   }
 
@@ -80,7 +90,7 @@
       return $errors;
     }
 
-    $hashed_password = '';
+    $hashed_password = password_hash($admin['password'], PASSWORD_BCRYPT);
 
     $sql = "INSERT INTO admins ";
     $sql .= "(first_name, last_name, email, username, hashed_password) ";
