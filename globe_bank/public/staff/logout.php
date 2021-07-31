@@ -1,7 +1,7 @@
 <?php
 require_once('../../private/initialize.php');
 
-// logout code goes here...
+log_out_admin();
 
 redirect_to(url_for('/staff/login.php'));
 
