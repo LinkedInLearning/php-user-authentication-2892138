@@ -2,6 +2,8 @@
 
 // Performs all actions necessary to log in an admin
 function log_in_admin($admin) {
+  // Prevent session fixation attacks
+  session_regenerate_id();
   $_SESSION['admin_id'] = $admin['id'];
   $_SESSION['username'] = $admin['username'];
   return true;
