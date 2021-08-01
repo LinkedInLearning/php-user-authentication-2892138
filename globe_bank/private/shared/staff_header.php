@@ -1,4 +1,5 @@
 <?php
+  require_login();
   if(!isset($page_title)) { $page_title = 'Staff Area'; }
 ?>
 

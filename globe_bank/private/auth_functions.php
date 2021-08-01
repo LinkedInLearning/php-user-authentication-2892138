@@ -25,10 +25,21 @@ function is_logged_in() {
   return isset($_SESSION['admin_id']);
 }
 
+// Returns true if a page is in the allow-list and is
+// exempt from user authentication
+function page_exempt_from_auth() {
+  $no_auth_pages = [
+    '/staff/login.php'
+  ];
+  $current_page = str_replace(WWW_ROOT, '', $_SERVER['SCRIPT_NAME']);
+  // If it is in the array, it is not restricted
+  return in_array($current_page, $no_auth_pages);
+}
+
 // Call require_login() at the top of any page which needs to
 // require a valid login before granting access to the page.
 function require_login() {
-  if(!is_logged_in()) {
+  if(!is_logged_in() && !page_exempt_from_auth()) {
     redirect_to(url_for('/staff/login.php'));
   } else {
     // Do nothing, let the rest of the page proceed.
