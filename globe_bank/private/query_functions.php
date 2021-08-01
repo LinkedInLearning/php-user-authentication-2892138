@@ -74,7 +74,18 @@
     if($password_required) {
       if(is_blank($admin['password'])) {
         $errors[] = "Password cannot be blank.";
+      } elseif (!has_length($admin['password'], array('min' => 12))) {
+        $errors[] = "Password must contain 12 or more characters";
+      } elseif (!preg_match('/[A-Z]/', $admin['password'])) {
+        $errors[] = "Password must contain at least 1 uppercase letter";
+      } elseif (!preg_match('/[a-z]/', $admin['password'])) {
+        $errors[] = "Password must contain at least 1 lowercase letter";
+      } elseif (!preg_match('/[0-9]/', $admin['password'])) {
+        $errors[] = "Password must contain at least 1 number";
+      } elseif (!preg_match('/[^A-Za-z0-9\s]/', $admin['password'])) {
+        $errors[] = "Password must contain at least 1 symbol";
       }
+
       if(is_blank($admin['confirm_password'])) {
         $errors[] = "Confirm password cannot be blank.";
       } elseif ($admin['password'] !== $admin['confirm_password']) {
