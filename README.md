@@ -1,7 +1,10 @@
 # PHP: User Authentication
-This is the repository for the LinkedIn Learning course `PHP: User Authentication`. The full course is available from [LinkedIn Learning][lil-course-url].
+This is the repository for the LinkedIn Learning course PHP: User Authentication. The full course is available from [LinkedIn Learning][lil-course-url].
 
-_See the readme file in the main branch for updated instructions and information._
+![PHP: User Authentication][lil-thumbnail-url] 
+
+Do you need to know how to apply best practices for user authentication in PHP? This course walks you through a series of best practices that you can apply to your own PHP projects to avoid costly security pitfalls. Instructor Kevin Skoglund gives you an overview of user authentication in PHP, then dives into how you can implement it. He steps through creating the database table, adding new users, logging users in and out, and controlling access to pages and functions. Kevin shows you how to work with strong passwords, prevent weak ones, and reset forgotten ones. He shows you how to secure user authentication by preventing insecure direct object references (IDOR), using HTTPS, protecting access tokens, and keeping track of logins. Kevin concludes with a challenge/solution set exploring how to write PHP code that expires a user login after a set amount of time has passed.
+
 ## Instructions
 This repository has branches for each of the videos in the course. You can use the branch pop up menu in github to switch to a specific branch and take a look at the course at that stage, or you can add `/tree/BRANCH_NAME` to the URL to go to the branch you want to access.
 
@@ -30,8 +33,12 @@ To resolve this issue:
 2. Clone this repository into your local machine using the terminal (Mac), CMD (Windows), or a GUI tool like SourceTree.
 
 
-[0]: # (Replace these placeholder URLs with actual course URLs)
+### Instructor
 
-[lil-course-url]: https://www.linkedin.com/learning/
-[lil-thumbnail-url]: http://
+Kevin Skoglund                           
+
+Check out my other courses on [LinkedIn Learning](https://www.linkedin.com/learning/instructors/kevin-skoglund).
+
+[lil-course-url]: https://www.linkedin.com/learning/php-user-authentication
+[lil-thumbnail-url]: https://cdn.lynda.com/course/2892138/2892138-1630601158628-16x9.jpg
 
